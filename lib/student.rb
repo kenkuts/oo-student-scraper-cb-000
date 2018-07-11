@@ -16,7 +16,7 @@ class Student
   end
 
   def add_student_attributes(attributes_hash)
-    self.new(attributes_hash)
+    self.new(Scraper.scrape_profile_page)
   end
 
   def self.all
