@@ -26,7 +26,7 @@ class Scraper
 
     profile.css('div.social-icon-container a').each do |link|
     account = link.attribute('href').value
-    # binding.pry
+    binding.pry
       case account
       when account.include?("twitter")
         social_hash[:twitter] = account
