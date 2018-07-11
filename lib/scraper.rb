@@ -24,14 +24,15 @@ class Scraper
     # social_media = [:twitter, :linkedin, :github, :blog]
     social_hash = {}
 
-    profile.css('div.social-icon-container a').each |link|
+    profile.css('div.social-icon-container a').each do |link|
     account = link.attribute('href').value
+    # binding.pry
       case account
-      when account.include?("twitter")
+      when account.include?("twitter") == true
         social_hash[:twitter] = account
-      when account.include?("gitbhub")
+      when account.include?("github") == true
         social_hash[:github] = account
-      when account.include?("linkedin")
+      when account.include?("linkedin") == true 
         social_hash[:linkedin] = account
       else
         social_hash[:blog] = account
