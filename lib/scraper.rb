@@ -28,11 +28,11 @@ class Scraper
     account = link.attribute('href').value
     # binding.pry
       case account
-      when account.include?("twitter") == true
+      when account.include?("twitter")
         social_hash[:twitter] = account
-      when account.include?("github") == true
+      when account.include?("github")
         social_hash[:github] = account
-      when account.include?("linkedin") == true 
+      when account.include?("linkedin")
         social_hash[:linkedin] = account
       else
         social_hash[:blog] = account
